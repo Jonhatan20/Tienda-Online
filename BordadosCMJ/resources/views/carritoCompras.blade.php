@@ -72,7 +72,7 @@
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="continue__btn update__btn">
-                                <a href="#"><i class="fa fa-spinner"></i>Actualizar Carrito</a>
+                                <a href=""><i class="fa fa-spinner"></i>Actualizar Carrito</a>
                             </div>
                         </div>
                     </div>
@@ -88,8 +88,8 @@
                     <div class="cart__total">
                         <h6>Carrito Total</h6>
                         <ul>
-                            <li>Subtotal <span>$ 169.50</span></li>
-                            <li>Total <span>$ 169.50</span></li>
+                            <li>Subtotal <span>$ {{$valor}}</span></li>
+                            <li>Total <span>$ {{$valor}}</span></li>
                         </ul>
                         <a href="#" class="primary-btn">Procesar compra</a>
                     </div>

@@ -12,7 +12,9 @@ class TiendaController extends Controller
     public function index(){
         $prods = Producto::all();
         $cates = Categoria::all();
-        return view('shop', compact('prods', 'prods','cates'));
+        $filas = Producto::count();
+        
+        return view('shop', compact('prods','cates','filas'));
     }
     public function detallesProducto($id){
         $prods = Producto::find($id);
@@ -28,7 +30,7 @@ class TiendaController extends Controller
         $carritoCompras = session()->get('carritoCompras');
 
         //si el carrito esta vacío, entonces este es el primer producto
-        if($carritoCompras){
+        if(!$carritoCompras){
             $carritoCompras = [
                 $id=> [
                     "nombre" => $prods->nombre,
@@ -49,6 +51,7 @@ class TiendaController extends Controller
             session()->put('carritoCompras', $carritoCompras);
 
             return back()->with('success', 'Producto agregado al carrito satisfactoriamente');
+            
         }
             //si el item no existe en el carrito, entonces agregarlo con la cantidad igual a 1
             $carritoCompras[$id] = [

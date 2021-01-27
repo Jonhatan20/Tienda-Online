@@ -83,7 +83,7 @@ p {
 }
 
 img {
-	max-width: 100%;
+	max-width: 80%;
 	
 }
 
@@ -559,19 +559,20 @@ ol {
 .hero__slider.owl-carousel .owl-item.active .hero__text h6 {
 	top: 0;
 	opacity: 1;
-	color: black;
+	color: red;
 }
 
 .hero__slider.owl-carousel .owl-item.active .hero__text h2 {
 	top: 0;
 	opacity: 1;
-	color: red;
+	color: black;
 }
 
 .hero__slider.owl-carousel .owl-item.active .hero__text p {
 	top: 0;
 	opacity: 1;
-	color: white;
+	color: black;
+	font-weight: 800;
 }
 
 .hero__slider.owl-carousel .owl-item.active .hero__text .primary-btn {
@@ -657,11 +658,11 @@ ol {
 }
 
 .hero__social {
-	margin-top: 190px;
+	margin-top: 150px;
 }
 
 .hero__social a {
-	font-size: 16px;
+	font-size: 32px;
 	color: #3d3d3d;
 	display: inline-block;
 	margin-right: 32px;

@@ -21,6 +21,7 @@
 
   <!--Mis estilos personalizados-->
   <link rel="stylesheet" href="{{ asset ('/dash/assets/css/mystyles.css')}}" type="text/css">
+  
 </head>
 
 <body>
@@ -62,6 +63,7 @@
   <script src="{{asset ('/dash/assets/vendor/chart.js/dist/Chart.extension.js')}}"></script>
   <!-- Argon JS -->
   <script src="{{asset ('/dash/assets/js/argon.js?v=1.2.0')}}"></script>
+  <script src="{{ asset ('/dash/assets/js/main.js') }}"></script>
   @yield('scripts')
 </body>
 

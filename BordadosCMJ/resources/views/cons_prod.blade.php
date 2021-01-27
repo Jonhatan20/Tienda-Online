@@ -144,8 +144,20 @@
     </div>
   </div>
   <!--End Modal Eliminar-->
+
+<!--FILTER CONTROLS-->
+  <div class="row">
+    <div class="col-lg-12">
+        <ul class="filter__controls">
+            <li class="active todos">Todos Los Productos</li>
+            <li class="vendidos">Los Más Vendidos</li>
+            <li class="nuevos">Los Más Nuevos</li>
+        </ul>
+    </div>
+  </div>
+
   <!--Tabla de registros-->
-    <div class="col-12">
+    <div class="col-12 tProductos">
       <div class="row">
         <div class="col-12">
           <table class="table">
@@ -195,6 +207,109 @@
         </div>
       </div>
     </div>
+    <!--Tabla de registros-->
+    <div class="col-12 vProductos">
+      <div class="row">
+        <div class="col-12">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Imagen</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Stock</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Talla</th>
+              </tr>
+            </thead>
+            <tbody>
+            @foreach ($prod as $p)
+              <tr>
+                <th scope="row">{{$p->id}}</th>
+                <td>{{$p->nombre}}</td>
+                <td>{{$p->imagen}}</td>
+                <td>{{$p->descripcion}}</td>
+                <td>{{$p->stock}}</td>
+                <td>{{$p->precio}}</td>
+                <td>{{$p->talla}}</td>
+                <td>
+                  <button type="button"
+                  data-id="{{ $p -> id}}"
+                  data-nombre="{{ $p -> nombre}}"
+                  data-imagen="{{ $p -> imagen}}"
+                  data-descripcion="{{ $p -> descripcion}}"
+                  data-stock="{{ $p -> stock}}"
+                  data-precio="{{ $p -> precio}}"
+                  data-talla="{{ $p -> talla}}"
+                  data-idCategoria="{{ $p -> idCategoria}}"
+                  class="btn btn-primary btnEditar" data-toggle="modal" data-target="#modelEditar" >Editar</button>
+                  <button type="button" data-id="{{ $p->id }}" class="btn btn-danger btnEliminar" data-toggle="modal" data-target="#modelEliminar" >Eliminar</button>
+                  <form action="{{ url ('/cons_prod', ['id'=>$p->id]) }}" method="post" id="formEli_{{ $p->id}}">
+                    @csrf
+                    <input type="hidden" name="id" value="{{ $p->id }}">
+                    <input type="hidden" name="_method" value="delete">
+                  </form>
+                </td>
+              </tr>
+              @endforeach
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!--Tabla de registros-->
+    <div class="col-12 nProductos">
+      <div class="row">
+        <div class="col-12">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Imagen</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Stock</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Talla</th>
+              </tr>
+            </thead>
+            <tbody>
+            @foreach ($prod as $p)
+              <tr>
+                <th scope="row">{{$p->id}}</th>
+                <td>{{$p->nombre}}</td>
+                <td>{{$p->imagen}}</td>
+                <td>{{$p->descripcion}}</td>
+                <td>{{$p->stock}}</td>
+                <td>{{$p->precio}}</td>
+                <td>{{$p->talla}}</td>
+                <td>
+                  <button type="button"
+                  data-id="{{ $p -> id}}"
+                  data-nombre="{{ $p -> nombre}}"
+                  data-imagen="{{ $p -> imagen}}"
+                  data-descripcion="{{ $p -> descripcion}}"
+                  data-stock="{{ $p -> stock}}"
+                  data-precio="{{ $p -> precio}}"
+                  data-talla="{{ $p -> talla}}"
+                  data-idCategoria="{{ $p -> idCategoria}}"
+                  class="btn btn-primary btnEditar" data-toggle="modal" data-target="#modelEditar" >Editar</button>
+                  <button type="button" data-id="{{ $p->id }}" class="btn btn-danger btnEliminar" data-toggle="modal" data-target="#modelEliminar" >Eliminar</button>
+                  <form action="{{ url ('/cons_prod', ['id'=>$p->id]) }}" method="post" id="formEli_{{ $p->id}}">
+                    @csrf
+                    <input type="hidden" name="id" value="{{ $p->id }}">
+                    <input type="hidden" name="_method" value="delete">
+                  </form>
+                </td>
+              </tr>
+              @endforeach
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    
 @endsection
 
 @section('scripts')
@@ -222,4 +337,5 @@
       });
     });
   </script>
+  
 @endsection

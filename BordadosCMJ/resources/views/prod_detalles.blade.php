@@ -78,7 +78,7 @@
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-8">
                         <div class="product__details__text">
-                            <h4>Hooded thermal anorak</h4>
+                            <h4>{{ $prods->nombre }}</h4>
                             <div class="rating">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
@@ -87,10 +87,10 @@
                                 <i class="fa fa-star-o"></i>
                                 <span> - 5 Reviews</span>
                             </div>
-                            <h3>$270.00 <span>70.00</span></h3>
-                            <p>Coat with quilted lining and an adjustable hood. Featuring long sleeves with adjustable
-                                cuff tabs, adjustable asymmetric hem with elastic side tabs and a front zip fastening
-                            with placket.</p>
+                            <h3>{{ $prods->precio }} <span>70.00</span></h3>
+                            <p><h4>La mejor tienda online sobre bordados en prendas para vestir.
+                                <b>¡El momento es ahora!</h4></b>
+                                {{ $prods->descripcion }}</p>
                             <div class="product__details__option">
                                 <div class="product__details__option__size">
                                     <span>Size:</span>
@@ -132,7 +132,7 @@
                                         <input type="text" value="1">
                                     </div>
                                 </div>
-                                <a href="#" class="primary-btn">add to cart</a>
+                                <a href="{{ url ('agregarCarrito/'. $prods->id) }}" class="primary-btn">Agregar al carrito</a>
                             </div>
                             <div class="product__details__btns__option">
                                 <a href="#"><i class="fa fa-heart"></i> add to wishlist</a>

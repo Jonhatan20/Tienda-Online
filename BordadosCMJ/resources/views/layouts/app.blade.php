@@ -22,7 +22,7 @@
   <!-- Navbar -->
   <nav id="navbar-main" class="navbar navbar-horizontal navbar-transparent navbar-main navbar-expand-lg navbar-light">
     <div class="container">
-      <a class="navbar-brand" href="dashboard.html">
+      <a class="navbar-brand" href="/index">
         <img src="{{ asset('/dash/assets/img/brand/logoSinFondo.png') }}">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,11 +45,6 @@
           </div>
         </div>
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a href="/" class="nav-link">
-              <span class="nav-link-inner--text">Administración</span>
-            </a>
-          </li>
           <li class="nav-item">
             <a href="{{ route('login') }}" class="nav-link">
               <span class="nav-link-inner--text">Iniciar Sesión</span>

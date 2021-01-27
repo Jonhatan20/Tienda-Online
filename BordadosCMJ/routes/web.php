@@ -48,6 +48,11 @@ Route::get('prod_detalles/{id}','App\Http\Controllers\TiendaController@detallesP
 Route::get('carritoCompras','App\Http\Controllers\TiendaController@carrito');
 Route::get('agregarCarrito/{id}','App\Http\Controllers\TiendaController@agregarCarrito');
 //CIERRE RUTAS DE DETALLES DE PRODUCTO
+
+//INICIO RUTAS DE CONTACTO
+Route::get('/contacto','App\Http\Controllers\ContactoController@index');
+Route::post('/contacto','App\Http\Controllers\ContactoController@store');
+//CIERRE RUTAS DE CONTACTO
 Auth::routes();
 
 

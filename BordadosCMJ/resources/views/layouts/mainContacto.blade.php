@@ -11,7 +11,7 @@
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
-    rel="stylesheet">
+        rel="stylesheet">
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="{{ asset ('/inicio/css/bootstrap.min.css') }}" type="text/css">
@@ -25,29 +25,12 @@
 </head>
 
 <body>
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
-
-
-    @include('layouts/headerShop')
+    
+    @include('layouts/headerIndex')
 
     @yield('contenedor')
-    <!-- Shopping Cart Section End -->
 
-    @include('layouts/footerShop')
-
-    <!-- Search Begin -->
-    <div class="search-model">
-        <div class="h-100 d-flex align-items-center justify-content-center">
-            <div class="search-close-switch">+</div>
-            <form class="search-model-form">
-                <input type="text" id="search-input" placeholder="Search here.....">
-            </form>
-        </div>
-    </div>
-    <!-- Search End -->
+    @include('layouts/footerIndex')
 
     <!-- Js Plugins -->
     <script src="{{ asset ('/inicio/js/jquery-3.3.1.min.js') }}"></script>

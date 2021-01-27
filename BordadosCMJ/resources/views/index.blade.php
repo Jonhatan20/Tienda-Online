@@ -1,5 +1,22 @@
 @extends('layouts.mainIndex',['titulo'=>'Bordados CMJ'])
 
+@section('headerNav')
+<div class="col-lg-6 col-md-6">
+    <nav class="header__menu mobile-menu">
+        <ul>
+            <li class="active"><a href="/index">Inicio</a></li>
+            <li><a href="/shop">Tienda</a></li>
+            <li><a href="./blog-details.html">Blog</a></li>
+            <li><a>Contacto</a>
+                <ul class="dropdown">
+                    <li><a href="/contacto">Contáctanos</a></li>
+                    <li><a href="https://www.facebook.com/bordadoscmj">Acerca de nosotros</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</div>
+@endsection('headerNav')
 @section('contenedor')
     @foreach($prods as $p)
         <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">

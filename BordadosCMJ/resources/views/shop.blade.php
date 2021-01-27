@@ -1,5 +1,22 @@
 @extends('layouts.mainShop',['titulo'=>'Tienda'])
 
+@section('headerNav')
+<div class="col-lg-6 col-md-6">
+    <nav class="header__menu mobile-menu">
+        <ul>
+            <li><a href="/index">Inicio</a></li>
+            <li class="active"><a href="/shop">Tienda</a></li>
+            <li><a href="./blog-details.html">Blog</a></li>
+            <li><a>Contacto</a>
+                <ul class="dropdown">
+                    <li><a href="https://www.facebook.com/bordadoscmj">Acerca de nosotros</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</div>
+@endsection('headerNav')
+
 @section('contenedor')
 @section('categorias')
 <div class="card">
@@ -24,7 +41,7 @@
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-6">
                 <div class="shop__product__option__left">
-                    <p>Showing 1–12 of 126 results</p>
+                    <p>Mostrando {{$filas}} resultado(s)</p>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6">
